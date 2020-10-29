@@ -13,10 +13,10 @@ public class JWTUtil {
     /*
     生成token    header.payload.sing
      */
-    private static final String SING="!QW#E%R";
+    private static final String SING="!QW#E%R";//设置令牌
     public static String getToken(Map<String,String> map){
         Calendar instance=Calendar.getInstance();
-        instance.add(Calendar.SECOND,6);   //设置token失效时间为2个小时
+        instance.add(Calendar.SECOND,60);   //设置token失效时间为2个小时
         //创建Jwt Builder
         JWTCreator.Builder builder=JWT.create();
         map.forEach((k,v)->{

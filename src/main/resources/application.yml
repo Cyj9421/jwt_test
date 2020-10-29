@@ -1,12 +1,21 @@
 server:
   port: 8080
 spring:
+  #数据库
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/test?serverTimezone=GMT%2B8&amp
     username: root
     password: 9421
+  #redis配置
+  redis:
+    database: 0       #数据库索引(默认为0)
+    host: 127.0.0.1   #redis 服务器地址
+    port: 6379        #redis服务器端口
+    password:         #redis服务器连接密码（默认为空）
+
 mybatis:
   mapper-locations: classpath:mapper/*.xml
-  type-aliases-package: com.cyj.jwt_test.dao.UserDao
+  type-aiases-package: com.cyj.jwt_test.dao.UserDao
+
